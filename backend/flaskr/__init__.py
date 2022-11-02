@@ -3,13 +3,12 @@ from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import random
-
+# importing models from model.py
 from models import setup_db, Question, Category, db
 
 QUESTIONS_PER_PAGE = 10
-
+# function to create and configure the app
 def create_app(test_config=None):
-    # create and configure the app
     app = Flask(__name__)
     setup_db(app)
     
