@@ -1,3 +1,4 @@
+![trivia](https://user-images.githubusercontent.com/73973314/199571591-5b05ac50-9c8b-49cf-8a00-cac57d9f8b3f.PNG)
 # API Development and Documentation Project
 
 ## Trivia App
