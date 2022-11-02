@@ -3,14 +3,14 @@ from sqlalchemy import Column, String, Integer, create_engine
 from flask_sqlalchemy import SQLAlchemy
 import json
 
+# linking the database to the app
 database_name = 'trivia'
 database_path = 'postgres://{}/{}'.format('localhost:5432', database_name)
 
 db = SQLAlchemy()
 
 """
-setup_db(app)
-    binds a flask application and a SQLAlchemy service
+setup_db(app) binds a flask application and a SQLAlchemy service
 """
 def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
@@ -20,7 +20,7 @@ def setup_db(app, database_path=database_path):
     db.create_all()
 
 """
-Question
+Question Model
 
 """
 class Question(db.Model):
@@ -59,7 +59,7 @@ class Question(db.Model):
             }
 
 """
-Category
+Category Model
 
 """
 class Category(db.Model):
