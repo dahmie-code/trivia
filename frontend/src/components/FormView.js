@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/FormView.css';
 
+// class component to create question form property
 class FormView extends Component {
   constructor(props) {
     super();
@@ -13,10 +14,10 @@ class FormView extends Component {
       categories: {},
     };
   }
-
+// get api to display categories
   componentDidMount() {
     $.ajax({
-      url: `/categories`, //TODO: update request URL
+      url: `/categories`,
       type: 'GET',
       success: (result) => {
         this.setState({ categories: result.categories });
@@ -28,11 +29,11 @@ class FormView extends Component {
       },
     });
   }
-
+// get api to display questions
   submitQuestion = (event) => {
     event.preventDefault();
     $.ajax({
-      url: '/questions', //TODO: update request URL
+      url: '/questions',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',
@@ -56,7 +57,7 @@ class FormView extends Component {
       },
     });
   };
-
+//   event handler to handle change
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
